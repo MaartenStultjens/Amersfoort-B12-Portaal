@@ -127,6 +127,31 @@
       color: white;
       border-bottom-color: var(--rood);
     }
+    .nav-search {
+      display: flex;
+      align-items: center;
+      margin-left: auto;
+      padding: 0.4rem 0;
+    }
+    .nav-search input {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 20px;
+      color: white;
+      padding: 0.3rem 0.9rem;
+      font-size: 0.78rem;
+      font-family: 'Montserrat', sans-serif;
+      width: 200px;
+      outline: none;
+      transition: all 0.2s;
+    }
+    .nav-search input::placeholder { color: rgba(255,255,255,0.5); }
+    .nav-search input:focus { background: rgba(255,255,255,0.18); border-color: rgba(255,255,255,0.5); width: 240px; }
+    .zoek-resultaat { border-left: 4px solid var(--lichtblauw); padding: 0.8rem 1rem; margin-bottom: 0.6rem; background: white; border-radius: 0 6px 6px 0; cursor: pointer; transition: background 0.15s; }
+    .zoek-resultaat:hover { background: #EAF1F8; }
+    .zoek-resultaat h4 { font-family: 'Montserrat', sans-serif; font-size: 0.88rem; color: var(--blauw); margin-bottom: 0.2rem; }
+    .zoek-resultaat p { font-size: 0.82rem; color: var(--muted); line-height: 1.4; }
+    .zoek-hit { background: #FFF3CD; border-radius: 2px; padding: 0 2px; }
 
     /* ── LAYOUT ── */
     main { max-width: 980px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
@@ -286,7 +311,7 @@
       <p>Van middeleeuwen tot moderne stad · Alles wat je moet weten</p>
       <div class="header-meta">
         <span class="address-tag">📍 Bloemendalsestraat 12</span>
-        <span class="level-badge">versie 6.0</span>
+        <span class="level-badge">versie 8.0 · 2 juni 2026</span>
       </div>
     </div>
     <div class="header-wapen">⚜</div>
@@ -308,6 +333,9 @@
   <button onclick="show('omgeving')">🌿 Omgeving</button>
   <button onclick="show('lopen')">🗺 Loop-gids</button>
   <button onclick="show('quiz')">🎯 Quiz</button>
+  <div class="nav-search">
+    <input type="text" id="zoekbalk" placeholder="🔍 Zoek in de gids…" oninput="zoekInPortaal(this.value)" onkeydown="if(event.key==='Escape'){this.value='';zoekInPortaal('')}">
+  </div>
 </nav>
 
 <main>
@@ -348,10 +376,30 @@
   <h2 class="section-title">🏠 De Bloemendalsestraat — jouw straat</h2>
 
   <div class="panel">
+    <h2>Bloemendal — het dorp dat de stad in werd opgeslokt</h2>
+    <p>Voordat de Bloemendalsestraat een stadsstraat werd, was <em>Bloemendael</em> een zelfstandig buitengebied — een <strong>heerlijkheid</strong>, een rechtsgebied met eigen bestuur en eigen rechtspraak. Het lag ten noorden van het oudste stadshart van Amersfoort, buiten de eerste stadsmuur, en strekte zich uit langs de Bloemendalsestraat en de Hooglandseweg tot aan Luttikeweede.</p>
+    <p>De heerlijkheid had zijn eigen heer: de rechten berustten van ouds bij de <strong>Heren van het huis Nijvelt</strong>, uit het Utrechtse geslacht Van Zuilen. Ze hielden rechtszitting over kleine overtredingen en geschillen in de Bloemendalsebuitenpoort — de stadspoort aan het einde van de straat fungeerde dus ook als rechtbank. Later gingen de heerlijke rechten over op de Amersfoortse regentenfamilie <strong>Van Bloemendael</strong>, die er zelfs haar naam aan ontleende. Het gebied heette officieel "het gerecht en de tienden van Bloemendal".</p>
+    <p>Toen Amersfoort in de 14e en 15e eeuw groeide en een tweede, grotere stadsmuur bouwde, werd Bloemendal gedeeltelijk binnen de muren opgenomen. Het buitengebied werd binnengebied. Maar de naam bleef — en zo ook het karakter: de straat heeft altijd een half-agrarisch, half-stedelijk karakter gehad, een grensgebied tussen boerderij en stad.</p>
+    <div class="hl blue">📌 De straat heeft een <strong>opvallend bochtig verloop</strong> — historici vermoeden dat dit geen toeval is, maar dat de Bloemendalsestraat in oorsprong een <em>oude zeedijk</em> of waterkering was, die de lager gelegen natte gronden langs de Eem afscheidde van het hogere zandige land. Ze loopt ook op naar een hoogste punt bij de kruising met de Teut — een subtiel maar merkbaar reliëf dat herinnert aan het oeroude landschap eronder.</div>
+  </div>
+
+  <div class="panel">
     <h2>Een van de oudste straten van de stad</h2>
-    <p>De Bloemendalsestraat is samen met de Langestraat een van de oudste straten van Amersfoort. De naam verwijst naar het <em>gerecht Bloemendal</em> — een rechtsgebied ten noorden van de middeleeuwse stad, dat in de 14e–15e eeuw bij de aanleg van de tweede stadsmuur gedeeltelijk binnen de muren werd opgenomen. De straat verbond de stad letterlijk met dit buitengebied.</p>
-    <p>De straat telt <strong>17 rijksmonumenten</strong> en 6 gemeentelijke monumenten. Dat is opmerkelijk veel voor één straat — vergelijkbaar met de Muurhuizen. Bijna elk pand heeft een verhaal.</p>
+    <p>De Bloemendalsestraat is samen met de Langestraat een van de oudste verbindingswegen van Amersfoort — de weg die de stad verbond met het noorden, met Hoogland en de polders, en via de voorde in de Eem met de overkant. De straat telt <strong>17 rijksmonumenten</strong> en 6 gemeentelijke monumenten, en beslaat in één blik eeuwen bouwgeschiedenis naast elkaar.</p>
     <div class="hl blue">📌 Op de kruising van het Havik en de Bloemendalsestraat lag mogelijk de allereerste <em>voorde</em> — de doorwaadbare plek in de Eem waaraan Amersfoort haar naam én haar bestaan dankt. Jij woont op de plek waar de stad begon.</div>
+
+    <h3>De straat heeft karakters, geen nummers</h3>
+    <p>Wat de Bloemendalsestraat onderscheidt van andere monumentale straten is dat de panden er namen hebben — en die namen vertellen een verhaal:</p>
+    <ul style="margin:0.8rem 0 0.8rem 1.2rem; line-height:2;">
+      <li><strong>Nr. 19 — De Gekroonde Laars</strong> (17e eeuw, rijksmonument): een pand met topgevel, en een lange zijgevel met hijsluiken aan de Teut. De naam verwijst waarschijnlijk naar een laarzenmaker of -handelaar die er ooit zat.</li>
+      <li><strong>Nr. 24 — Het Ploegje</strong> (19e eeuw, rijksmonument): een lage woning met rechte daklijst — een herinnering aan de agrarische functie van dit deel van de straat.</li>
+      <li><strong>Nr. 31 — De Ark</strong> (18e eeuw): de <em>laatste boerderij binnen de stadsmuren</em> van het gerecht Bloemendal. Bijzonder detail: hier woonde iemand die <strong>krankzinnigen verpleegde</strong>. In de 18e eeuw had je geen psychiatrisch ziekenhuis — je had particulieren die geesteszieken in huis namen en verzorgden, tegen betaling of uit naastenliefde.</li>
+      <li><strong>Nr. 35 — Het Dolhuis</strong> (17e eeuw, rijksmonument): de naam klinkt grappig, maar was klinisch — <em>dolhuis</em> was de officiële term voor een inrichting voor geesteszieken. Of dit pand daadwerkelijk die functie had, of de naam om een andere reden droeg, is niet zeker. Maar de combinatie van De Ark (nr. 31) en het Dolhuis (nr. 35) suggereert dat dit deel van de straat historisch verbonden was met de zorg voor kwetsbare mensen.</li>
+      <li><strong>Nr. 53 — Pakhuis</strong> (17e eeuw, rijksmonument): een rechte kroonlijst, hijsluiken — dit was handelsinfrastructuur. De straat was een aanvoerroute, en pakhuizen hoorden daarbij.</li>
+      <li><strong>Nr. 58 — Huis met dodekop</strong> (18e eeuw, rijksmonument): een topgevel met een <em>dodekop</em> — een doodshoofd — geverfd op de gevel. Niet ongewoon in de 18e eeuw als memento mori, maar zeldzaam bewaard.</li>
+      <li><strong>Nr. 61 — Stadsboerderij</strong>: tot ver in de 20e eeuw een werkende boerderij midden in de stad. Nu het LA-café.</li>
+      <li><strong>Nr. 73 — Het Douanehuis</strong> (19e eeuw, rijksmonument): neoklassiek, witgepleisterd, met muren langs de straat. Hier werd tol geheven of goederen gecontroleerd bij de stadspoort.</li>
+    </ul>
   </div>
 
   <div class="panel">
@@ -423,12 +471,12 @@
   </div>
 
   <div class="panel">
-    <h2>Jouw huis — nr. 12: een reconstructie met een geweten</h2>
+    <h2>Jouw huis — nr. 12: een monument dat zichzelf uitvond</h2>
 
     <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1rem 0;">
       <div style="background:var(--stone); border-radius:8px; overflow:hidden;">
         <img src="https://images.memorix.nl/gam/thumb/640x480/cce0aef7-3967-367b-a4a3-bf784e191284.jpg" style="width:100%; height:220px; object-fit:cover;" alt="Bloemendalsestraat 12 en 14, 1978" loading="lazy">
-        <div style="padding:0.7rem; font-size:0.82rem; color:var(--muted);">Nr. 12 (links) en 14, foto 25 augustus 1978. Negen jaar later werd nr. 12 gesloopt en herbouwd. (© H. van Mourik / Archief Eemland, CC BY 4.0)</div>
+        <div style="padding:0.7rem; font-size:0.82rem; color:var(--muted);">Nr. 12 (links) en 14, foto 25 augustus 1978 door H. van Mourik. Negen jaar later werd nr. 12 gesloopt en herbouwd. (© Archief Eemland, CC BY 4.0)</div>
       </div>
       <div style="background:var(--stone); border-radius:8px; overflow:hidden;">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Overzicht_-_Amersfoort_-_20009667_-_RCE.jpg/960px-Overzicht_-_Amersfoort_-_20009667_-_RCE.jpg" style="width:100%; height:220px; object-fit:cover;" alt="Bloemendalsestraat straatgezicht RCE" loading="lazy">
@@ -436,19 +484,25 @@
       </div>
     </div>
 
-    <p>Bloemendalsestraat 12 is een <strong>gemeentelijk monument</strong> — beschermd door de gemeente Amersfoort, niet door het rijk, maar wel erkend als waardevol erfgoed in de context van de straat.</p>
+    <p>Bloemendalsestraat 12 is een <strong>gemeentelijk monument</strong> — officieel beschermd door de gemeente Amersfoort als onderdeel van het beschermde stadsgezicht. Dat klinkt groots voor een huis uit 1987, maar juist daarin zit de bijzonderheid.</p>
 
-    <p>De huidige bebouwing op nr. 12 dateert van <strong>1987</strong>. Het pand is dus jong — jonger dan veel bewoners van de straat — maar het is bewust gebouwd als een 19e-eeuwse stijlreferentie. Witte gepleisterde gevel, roedenvensters (de kleine ruitjes in het kozijn), een klassieke paneeldeur en een sierlijke kroonlijst. De architecten wilden dat het pand paste in het karakter van de straat, zonder te doen alsof het oud was.</p>
+    <h3>Het paradox van een jong monument</h3>
+    <p>Het pand is herbouwd in <strong>1987</strong> — in een tijd waarin Nederland worstelde met de vraag hoe je historische binnensteden beheert. In de decennia daarvoor waren overal gaten gevallen in oude straatgezichten: brandschade, verval, sloop voor winkelpanden of parkeerplaatsen. De Bloemendalsestraat had zo'n gat. De keuze was: modern invullen of aansluiten bij de omgeving.</p>
+    <p>Men koos voor aansluiting. Het nieuwe pand kreeg een <strong>witte gepleisterde gevel</strong>, <strong>roedenvensters</strong> (de kleine rechthoekige ruitjes die in 19e-eeuwse grachtenpanden standaard waren), een klassieke <strong>paneeldeur</strong> en een sierlijke <strong>kroonlijst</strong>. Geen imitatie van één specifiek historisch pand, maar een destillatie van het karakter van de straat. Het resultaat: wie zonder voorkennis langs loopt, vermoedt een gerenoveerde 19e-eeuwse woning.</p>
 
-    <p>Wat er vóór 1987 op deze plek stond, is minder goed gedocumenteerd. De Bloemendalsestraat heeft in de loop van de eeuwen meerdere sloop- en herbouwgolven gekend — de straat die je vandaag ziet is het resultaat van lagen beslissingen, niet van één coherente bouwperiode. Dat nr. 12 een gemeentelijk monument is, zegt iets over hoe de gemeente die brugfunctie waardeert: het pand vult visueel een plek in die anders een gat zou zijn in het straatgezicht.</p>
+    <h3>Wat er vóór 1987 stond</h3>
+    <p>De oudste bekende foto van het perceel is genomen op <strong>25 augustus 1978</strong> door fotograaf H. van Mourik voor het Archief Eemland. Je ziet op die foto een eenvoudig pand — functioneel, niet monumentaal, geen opvallende gevel. Het type bebouwing dat na de oorlog in veel historische straten de leegte vulde: sober, praktisch, passend noch opvallend. In 1987 was het aan vervanging toe. De gemeente greep het moment aan om het straatgezicht te herstellen.</p>
 
-    <p>Binnenin zijn de houten balken in de slaapkamers vrijgelaten — een architectonische keuze die verwijst naar de constructietechnieken van vroeger, ook al is het huis zelf van recente datum. Geen middeleeuwse spanten of tongewelven, maar een eigentijdse woning met een historisch geweten, in een straat die er vol mee zit.</p>
+    <h3>Gemeentelijk monument: waarom?</h3>
+    <p>De monumentenstatus van nr. 12 is niet gebaseerd op ouderdom — het pand is jonger dan de meeste mensen die erin hebben gewoond. Het is gebaseerd op <strong>contextuele waarde</strong>: het pand draagt bij aan het ensemble van de straat. In de monumentenzorg heet dit de waarde van het <em>straatgezicht</em> — de som is meer dan de delen. Een rijksmonument op nr. 17 naast een lelijk jaren-'80 pand op nr. 12 is minder waard dan twee panden die visueel bij elkaar passen. Dat inzicht ligt ten grondslag aan de bescherming van nr. 12.</p>
+    <p>In de vakwereld is dit interessant: het is een van de weinige gevallen waarbij een bewust historiserende nieuwbouw uit de jaren '80 zelf monumentwaardig wordt verklaard — niet als erfgoed van het verleden, maar als erfgoed van een beslissing over hoe we omgaan met het verleden.</p>
 
-    <p>De foto hierboven — de oudste bekende afbeelding van het pand — is genomen op <strong>25 augustus 1978</strong> door fotograaf H. van Mourik voor het Archief Eemland. Je ziet nr. 12 (links) en 14. Negen jaar later zou nr. 12 worden gesloopt en in zijn huidige vorm herbouwd.</p>
+    <h3>De ligging in de straat</h3>
+    <p>Nr. 12 ligt in het <em>onderste deel</em> van de Bloemendalsestraat — tussen het Havik en de Weversingel, het gedeelte dat ooit binnen de eerste stadsmuur viel (de Bloemendalsebinnenpoort stond hier). Dit was het stedelijke deel van de straat, dichter bij het handelscentrum. De rijksmonumenten op de even nummers (3, 5, 17, 19) zijn je directe buren. Aan de overkant, nr. 17, staat een huis met halsgevel uit de 17e eeuw — een pand dat driehonderd jaar ouder is dan het jouwe, op vijf meter afstand.</p>
 
-    <div class="hl yellow">💡 <strong>Borrelversie:</strong> "Ons huis is pas gebouwd in 1987 — maar het ziet eruit als 19e eeuw. De gemeente heeft het aangewezen als gemeentelijk monument omdat het visueel de straat compleet maakt. De oudste foto die van het pand bestaat, is uit 1978 — negen jaar voordat het werd afgebroken en opnieuw opgebouwd."</div>
+    <div class="hl yellow">💡 <strong>Borrelversie:</strong> "Mijn huis is uit 1987 — maar het is een gemeentelijk monument. Niet omdat het oud is, maar omdat het zo goed nadoet hoe oud eruit ziet, dat de gemeente het wil beschermen. De straat heeft panden uit de 17e, 18e en 19e eeuw. Wij zijn de 20e. En de oudste foto van ons huis is uit 1978 — negen jaar voordat het werd gesloopt en herbouwd."</div>
 
-    <div class="hl blue">📌 Meer historische foto's van de Bloemendalsestraat zijn te vinden via <a href="https://www.archiefeemland.nl" target="_blank" style="color:var(--lichtblauw)">Archief Eemland</a> — zoek op "Bloemendalsestraat". En het Instagram-account <strong>@amersfoorttoenennu</strong> van David de Vries biedt prachtige "toen en nu"-vergelijkingen van de hele binnenstad.</div>
+    <div class="hl blue">📌 Meer historische foto's van de Bloemendalsestraat zijn te vinden via <a href="https://www.archiefeemland.nl" target="_blank" style="color:var(--lichtblauw)">Archief Eemland</a> — zoek op "Bloemendalsestraat". Het Instagram-account <strong>@amersfoorttoenennu</strong> van David de Vries biedt "toen en nu"-vergelijkingen van de hele binnenstad.</div>
   </div>
 
   <div class="panel">
@@ -943,6 +997,41 @@
     <p>In 1988 kreeg de Indiase architect <strong>Ashok Bhalotra</strong> (werkzaam bij KuiperCompagnons in Rotterdam) de opdracht een nieuwe wijk te ontwerpen ten noordwesten van Amersfoort. Zijn plan was revolutionair: cirkels, ovalen, rechte kleurenbanden en gebogen lijnen die op een abstract schilderij van Wassily Kandinsky leken. De opdracht was expliciet: maak een <em>poëtische</em> woonwijk, vol metaforen, rond het thema "thuis zijn en reizen".</p>
     <p>Kattenbroek heeft een centrale ring (<em>De Ring</em>), doorsneden door assen (<em>De Laan der Hoven</em>, <em>De Verborgen Zone</em>), vijf woonthema's en vijf landschappen. Elk deel van de wijk heeft zijn eigen karakter — van formeel en statig tot informeel en groen. Geen twee straten zijn hetzelfde. Busladingen internationale architectuurstudenten kwamen hier kijken in de jaren '90. Het heet inmiddels de "speeltuin van architecten".</p>
     <div class="hl blue">📌 Bhalotra overleed in 2024. Hij bleef tot op hoge leeftijd betrokken bij Amersfoort en gaf lezingen over Kattenbroek. De wijk is zijn meest zichtbare erfenis — en een van de weinige Nederlandse naoorlogse wijken met echte architectonische identiteit.</div>
+  </div>
+
+  <div class="panel">
+    <h2>Een diverse stad — de nieuwe Amersfoorters</h2>
+    <p>Amersfoort is altijd een doortrekstad geweest — op een kruispunt van wegen, een overloopstad van de Randstad. Dat zie je terug in de bevolking: ruim <strong>29% van de inwoners heeft een niet-Nederlandse achtergrond</strong>, iets boven het nationale gemiddelde. Maar de diversiteit is ongelijk verdeeld over de wijken — en dat vertelt een eigen verhaal.</p>
+
+    <h3>Gastarbeiders en hun erfenis</h3>
+    <p>De eerste grote golf migranten kwam in de jaren '60 en '70: Turkse en Marokkaanse mannen, geworven voor de industrie en de bouw. Amersfoort had de Wagenwerkplaats, de bouwsector groeide hard, en er was werk. De mannen kwamen alleen, later volgden gezinnen via gezinshereniging. Ze vestigden zich in de betaalbare wijken vlak bij het centrum: <strong>Kruiskamp, Liendert en Schuilenburg</strong>. Vandaag heeft Kruiskamp 45% inwoners met een migratieachtergrond, Liendert zelfs 53%. Dit zijn geen achterstandswijken in de klassieke zin — het zijn levendige buurten met eigen winkels, moskeeën, eetcultuur en gemeenschapsleven.</p>
+
+    <h3>De wijk De Hoef — het meest diverse stukje stad</h3>
+    <p>De Hoef is een buitenbeentje: 63% heeft een migratieachtergrond, waarvan een groot deel Europees (expats, arbeidsmigranten uit Oost-Europa). Het is de wijk met de hoogste doorstroom, het meest kosmopolitische karakter, en tegelijk de minste sociale cohesie. Typisch voor wijken die als eerste opvang fungeren voor nieuwkomers.</p>
+
+    <h3>Vathorst — de nieuwe middenklasse is gemengd</h3>
+    <p>Interessant is dat ook de nieuwe vinex-wijk Vathorst zo'n 29-32% bewoners met migratieachtergrond telt — vergelijkbaar met het stadsgemiddelde. De tweede generatie migranten trekt niet meer automatisch naar de oude wijken van hun ouders, maar naar de nieuwbouwwijken van de Amersfoortse middenklasse. Integratie als geografisch verschijnsel.</p>
+
+    <h3>Religie en zichtbaarheid</h3>
+    <p>Amersfoort telt meerdere moskeeën, waarvan de <strong>Merkez Moskee</strong> in Kruiskamp de grootste en meest zichtbare is. De Turkse gemeenschap heeft er ook eigen verenigingen, een Turkse supermarkt en een eigen sociale infrastructuur opgebouwd. De Marokkaanse gemeenschap is iets meer verspreid over de stad. Daarnaast zijn er Surinaamse, Antilliaanse en diverse Afrikaanse gemeenschappen, met name zichtbaar in de kerkelijke wereld — evangelische en pinkstergemeenten groeien hard in de stad.</p>
+
+    <div class="hl yellow">💡 Een goed oog voor de diversiteit van Amersfoort krijg je op de markt op de Hof (zaterdag) en de Varkensmarkt (vrijdag). Daar koopt half Kruiskamp en half Leusderkwartier z'n groenten — naast elkaar, zonder ophef.</div>
+  </div>
+
+  <div class="panel">
+    <h2>De Bijbelgordel — Amersfoort op de grens</h2>
+    <p>De <strong>Bijbelgordel</strong> is een brede strook door Nederland die loopt van Zeeland via de Veluwe naar de Noordoostpolder — een gebied waar orthodox-protestante gemeenschappen (bevindelijk gereformeerden) historisch sterk vertegenwoordigd zijn. Amersfoort ligt precies op de <em>rand</em> van die gordel: de Gelderse Vallei en de Veluwe ten oosten en zuiden zijn diep orthodox-protestants; de stad zelf is stedelijk en veel gemengder.</p>
+
+    <h3>Wat de Bijbelgordel inhoudt</h3>
+    <p>In Bijbelgordelgemeenten spelen SGP en ChristenUnie een grote rol. De kerk staat centraal in het sociale leven, de Statenvertaling uit 1637 is de norm, en er zijn eigen scholen, zorginstellingen en vakantieorganisaties. Televisie werd lang afgewezen. Op zondag gaat alles dicht. Het is een gesloten maar hechte subcultuur die generaties lang intact bleef — ook omdat men onderling trouwde en in eigen kring bleef.</p>
+
+    <h3>De invloed op Amersfoort</h3>
+    <p>In Amersfoort zelf is de Bijbelgordel-invloed voelbaar maar niet dominant. De stad heeft een actieve <strong>ChristenUnie</strong>-afdeling en een kleine SGP-fractie in de gemeenteraad. Er zijn meerdere <strong>reformatorische scholen</strong> — in 1979 bepaalde de Raad van State expliciet dat er in Amersfoort ruimte moest zijn voor reformatorisch onderwijs als zelfstandige richting. De <em>Van Lodensteinschool</em> is daar een voorbeeld van — vernoemd naar de 17e-eeuwse Amersfoortse predikant <strong>Jodocus van Lodenstein</strong>, een van de geestelijke vaders van de Nadere Reformatie.</p>
+
+    <h3>Jodocus van Lodenstein — de predikant die de gordel mede schiep</h3>
+    <p>Van Lodenstein (1620–1677) was predikant in Amersfoort van 1653 tot zijn dood. Hij wordt beschouwd als een van de grondleggers van de <em>Nadere Reformatie</em> — de Nederlandse variant van het piëtisme, die streefde naar een diepere persoonlijke vroomheid, ver van uiterlijk vertoon. Zijn invloed op de orthodox-protestantse subcultuur in Nederland was enorm: hij schreef liederen, preekte ascetisch soberheid, en wees het wereldse leven af. De spirituele lijn van Van Lodenstein loopt rechtstreeks naar de Bijbelgordel-cultuur van vandaag. Zijn graf is in de Sint-Joriskerk.</p>
+
+    <div class="hl blue">📌 De spanning tussen de seculiere, diverse stad Amersfoort en de orthodox-protestantse cultuur in de omliggende dorpen is tot op de dag van vandaag voelbaar — in schoolkeuze, in politiek, en in de stilte op zondagochtend in plaatsen als Barneveld, Ede en Bunschoten-Spakenburg, op een halfuur rijden van de Bloemendalsestraat.</div>
   </div>
 
   <div class="panel">
@@ -1842,6 +1931,13 @@
   </div>
 </div>
 
+<!-- ======================== ZOEKEN ======================== -->
+<div id="zoeken" class="section">
+  <h2 class="section-title">🔍 Zoekresultaten</h2>
+  <div id="zoek-info" class="panel" style="padding:0.8rem 1rem; color:var(--muted); font-size:0.88rem;"></div>
+  <div id="zoek-resultaten"></div>
+</div>
+
 <!-- ======================== QUIZ ======================== -->
 <div id="quiz" class="section">
   <h2 class="section-title">🎯 Test je kennis</h2>
@@ -1940,11 +2036,38 @@
     {q:"Wat is Kamp Amersfoort?",options:["Een modern kampeerterrein bij de Eem","Een SS-bewakingskamp uit WOII bij Leusderheide, nu nationaal monument","Een middeleeuws kamp buiten de stadsmuren","De naam van een historische kazerne in het centrum"],correct:1,explain:"Kamp Amersfoort (1941–1945) was een beruchte SS-doorgangskamp voor politieke gevangenen en verzetsstrijders. Nu nationaal monument en herdenkingsplaats."}
   ];
 
+  // Wekelijkse selectie: 10 vragen op basis van weeknummer
+  function getWeekNumber() {
+    const d = new Date();
+    const jan1 = new Date(d.getFullYear(), 0, 1);
+    return Math.ceil(((d - jan1) / 86400000 + jan1.getDay() + 1) / 7);
+  }
+  function getWeeklyQuestions() {
+    const week = getWeekNumber();
+    // Seeded shuffle op basis van weeknummer
+    const seed = week * 2654435761;
+    const shuffled = [...questions].sort((a, b) => {
+      const ha = Math.abs(Math.sin(seed + questions.indexOf(a)) * 10000) % 1;
+      const hb = Math.abs(Math.sin(seed + questions.indexOf(b)) * 10000) % 1;
+      return ha - hb;
+    });
+    return shuffled.slice(0, 10);
+  }
+
+  let weeklyQ = getWeeklyQuestions();
   let answered = [];
+
   function renderQuiz() {
     const c = document.getElementById('quiz-container');
     c.innerHTML = '';
-    questions.forEach((q,qi) => {
+    // Week-label
+    const weekLabel = document.createElement('div');
+    weekLabel.className = 'hl blue';
+    weekLabel.style.marginBottom = '1rem';
+    weekLabel.innerHTML = `📅 <strong>Week ${getWeekNumber()} — 10 vragen uit de bank van ${questions.length}</strong> · Elke maandag een nieuwe selectie`;
+    c.appendChild(weekLabel);
+
+    weeklyQ.forEach((q,qi) => {
       const div = document.createElement('div');
       div.className = 'quiz-question panel';
       div.innerHTML = `<p>${qi+1}. ${q.q}</p>`;
@@ -1964,18 +2087,18 @@
       }
       c.appendChild(div);
     });
-    if (answered.filter(a=>a!==undefined).length === questions.length) {
-      const score = answered.filter((a,i)=>a===questions[i].correct).length;
+    if (answered.filter(a=>a!==undefined).length === weeklyQ.length) {
+      const score = answered.filter((a,i)=>a===weeklyQ[i].correct).length;
       const s = document.createElement('div'); s.className='panel'; s.style.textAlign='center';
-      const geslaagd = score >= 42;
-      s.innerHTML=`<h2 style="color:var(--blauw)">Resultaat: ${score} van de ${questions.length}</h2>
-        <p style="margin-top:0.4rem; font-size:0.9rem; color:var(--muted)">Slagingsnorm: 42 van de 50</p>
+      const geslaagd = score >= 7;
+      s.innerHTML=`<h2 style="color:var(--blauw)">Resultaat: ${score} van de 10</h2>
+        <p style="margin-top:0.4rem; font-size:0.9rem; color:var(--muted)">Slagingsnorm: 7 van de 10 · Volgende week nieuwe vragen</p>
         <div class="hl ${geslaagd?'green':'red'}" style="margin-top:0.8rem">
           ${geslaagd
-            ? score===50 ? '🏆 Perfect! Je weet meer over Amersfoort dan de meeste Amersfoorters. Chapeau.'
-            : score>=46 ? '🏆 Uitstekend geslaagd — echte Amersfoort-kenner!'
+            ? score===10 ? '🏆 Perfect! Je weet meer over Amersfoort dan de meeste Amersfoorters. Chapeau.'
+            : score>=9 ? '🏆 Uitstekend — echte Amersfoort-kenner!'
             : '✅ Geslaagd! Je kent de stad goed.'
-            : score>=35 ? '📖 Bijna — nog een paar onderwerpen bijlezen en je slaagt.'
+            : score>=5 ? '📖 Bijna — nog een paar onderwerpen bijlezen en je slaagt.'
             : '🔄 Nog niet geslaagd. Loop de tabbladen nog eens door en probeer opnieuw.'}
         </div>
         <button class="quiz-option" style="margin-top:1rem;max-width:240px" onclick="answered=[];renderQuiz();updateProgress()">↺ Opnieuw proberen</button>`;
@@ -1984,7 +2107,7 @@
   }
   function updateProgress() {
     const filled = answered.filter(a=>a!==undefined).length;
-    document.getElementById('quiz-progress').style.width=(filled/questions.length*100)+'%';
+    document.getElementById('quiz-progress').style.width=(filled/weeklyQ.length*100)+'%';
   }
   renderQuiz();
 </script>
@@ -2217,6 +2340,92 @@ Geef levendige, concrete antwoorden. Gebruik soms humor. Antwoord in het Nederla
   refreshBanner();
   if (apiKey) document.getElementById('api-key-input').value = apiKey;
 })();
+
+// ── ZOEKFUNCTIE ──────────────────────────────────────────────
+function zoekInPortaal(term) {
+  term = term.trim();
+  if (term.length < 2) {
+    // Terug naar overzicht als zoekveld leeg
+    if (term.length === 0) { show('overzicht'); }
+    return;
+  }
+
+  // Sectie-labels voor de breadcrumb
+  const sectieTitels = {
+    bloemendalsestraat: '🏠 Jouw Straat',
+    geschiedenis: '🏛 Geschiedenis',
+    binnenstad: '🚶 Binnenstad',
+    joden: '✡ Joods Amersfoort',
+    moderne: '🏗 Moderne Stad',
+    cultuur: '🎨 Cultuur',
+    horeca: '🍻 Uitgaan',
+    cijfers: '📊 Cijfers',
+    sport: '⚽ Sport',
+    verhalen: '📖 Verhalen',
+    lopen: '🗺 Loop-gids',
+    omgeving: '🌿 Omgeving',
+    overzicht: '🗺 Overzicht'
+  };
+
+  const results = [];
+  const re = new RegExp(term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi');
+
+  document.querySelectorAll('.section').forEach(sec => {
+    if (sec.id === 'zoeken' || sec.id === 'quiz') return;
+    const panels = sec.querySelectorAll('.panel, .verhaal-body, .accordion-body');
+    panels.forEach(panel => {
+      const text = panel.innerText || panel.textContent;
+      if (!re.test(text)) return;
+      re.lastIndex = 0;
+
+      // Koptekst van dit blok
+      const heading = panel.querySelector('h2, h3, h4');
+      const titel = heading ? heading.textContent.trim() : sectieTitels[sec.id] || sec.id;
+
+      // Snippet: zin rondom de match
+      const idx = text.search(re);
+      re.lastIndex = 0;
+      const start = Math.max(0, idx - 60);
+      const eind = Math.min(text.length, idx + 120);
+      let snippet = (start > 0 ? '…' : '') + text.slice(start, eind).replace(/\n+/g, ' ') + (eind < text.length ? '…' : '');
+      snippet = snippet.replace(re, m => `<span class="zoek-hit">${m}</span>`);
+      re.lastIndex = 0;
+
+      results.push({ sectie: sec.id, sectionLabel: sectieTitels[sec.id] || sec.id, titel, snippet });
+    });
+  });
+
+  // Dedupliceer op sectie+titel
+  const seen = new Set();
+  const uniq = results.filter(r => {
+    const k = r.sectie + '|' + r.titel;
+    if (seen.has(k)) return false;
+    seen.add(k); return true;
+  });
+
+  // Toon zoeksectie
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.getElementById('zoeken').classList.add('active');
+  document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+
+  document.getElementById('zoek-info').textContent =
+    uniq.length === 0
+      ? `Geen resultaten gevonden voor "${term}".`
+      : `${uniq.length} resultaat${uniq.length !== 1 ? 'en' : ''} voor "${term}"`;
+
+  const container = document.getElementById('zoek-resultaten');
+  container.innerHTML = '';
+  uniq.forEach(r => {
+    const div = document.createElement('div');
+    div.className = 'zoek-resultaat';
+    div.innerHTML = `<h4>${r.sectionLabel} → ${r.titel}</h4><p>${r.snippet}</p>`;
+    div.onclick = () => {
+      document.getElementById('zoekbalk').value = '';
+      show(r.sectie);
+    };
+    container.appendChild(div);
+  });
+}
 </script>
 </body>
 </html>
